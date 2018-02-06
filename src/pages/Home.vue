@@ -32,7 +32,7 @@
     .head span {
         display: block;
         float: left;
-        width: 50%;
+        width: 3.59rem;
         height: 0.8rem;
         line-height: 0.8rem;
         text-align: center;
