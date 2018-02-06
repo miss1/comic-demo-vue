@@ -10,6 +10,7 @@ Vue.use(Router);
 
 export default new Router({
     mode: 'history',
+    base: '/comic_demo/',      //项目不是部署在服务器的根目录时需要设置这一项，值为将要部署到的服务器文件夹路径（同时config/index.js中build下面assetsPublicPath也要设置成这个路径）
     routes: [
         {
             path: '/',

@@ -17,6 +17,9 @@
             }
         },
         created(){
+            //this.getEnglishList();
+        },
+        mounted: function () {
             this.getEnglishList();
         },
         methods:{
