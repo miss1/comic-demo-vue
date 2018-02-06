@@ -2,6 +2,22 @@
 
 > A Vue.js project
 
+>veu入门练手项目<br>
+>使用vuejs、vue-router、vue-resource<br>
+>接口调用的是易源数据的免费接口
+
+## 目显示效果
+
+>[查看项目演示效果请戳这里](https://miss1.github.io/comic_demo)<br>
+
+>手机端请扫描下面二维码<br>
+![image](https://github.com/miss1/comic_demo/raw/master/screenshot/comic.png)
+
+## 项目截图
+
+![image](https://github.com/miss1/comic_demo/raw/master/screenshot/xiaoguo1.png)<br>
+![image](https://github.com/miss1/comic_demo/raw/master/screenshot/xiaoguo2.png)<br>
+![image](https://github.com/miss1/comic_demo/raw/master/screenshot/xiaoguo3.png)
 ## Build Setup
 
 ``` bash
