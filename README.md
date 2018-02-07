@@ -6,7 +6,7 @@
 >使用vuejs、vue-router、vue-resource<br>
 >接口调用的是易源数据的免费接口
 
-## 目显示效果
+## 项目显示效果
 
 >[查看项目演示效果请戳这里](https://miss1.github.io/comic_demo)<br>
 
