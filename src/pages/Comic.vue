@@ -36,7 +36,9 @@
                     type: "/category/weimanhua/kbmh",
                     showapi_sign: "3d1eec5870f24ffc9c0270852e7b69ff"
                 };
+                _this.$loading_show();
                 _this.$http.post("https://route.showapi.com/958-1", params).then(function (res) {
+                    _this.$loading_hide();
                     const response = res.body;
                     if (response.showapi_res_code == 0) {
                         console.log(response.showapi_res_body);

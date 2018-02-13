@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
     .hide {
         clear: both;
         width: 100%;

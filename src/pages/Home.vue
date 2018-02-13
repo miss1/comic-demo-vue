@@ -2,8 +2,7 @@
     <div id="app">
         <div class="head">
             <router-link to="/"><span class="h_comic" v-bind:class="{seclet: isComicActive}" @click="isComicActive = true,isEnglishActive=false">Comic</span></router-link>
-            <router-link to="/english"><span class="h_english" v-bind:class="{seclet: isEnglishActive}" @click="isComicActive = false,isEnglishActive=true">English</span>
-            </router-link>
+            <router-link to="/english"><span class="h_english" v-bind:class="{seclet: isEnglishActive}" @click="isComicActive = false,isEnglishActive=true">English</span></router-link>
         </div>
         <div id="content">
             <router-view></router-view>

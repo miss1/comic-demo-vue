@@ -6,7 +6,14 @@ import App from './App'
 import router from './router/index'
 import './config/rem'
 
+import './style/config.css'
+
+import loadingImg from './assets/arror.png'
+import Loading from './plugins/loading'
+
 Vue.config.productionTip = false;
+
+Vue.use(Loading, loadingImg);
 
 Vue.use(VueResource);
 Vue.http.options.emulateJSON = true;
