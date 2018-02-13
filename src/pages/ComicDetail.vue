@@ -60,6 +60,7 @@
 
 <style scoped>
     .head{
+        position: absolute;
         width: 100%;
         height: 1rem;
         background: #2e2e2e;
@@ -91,8 +92,10 @@
         padding: 0;
     }
     .content{
-        margin-top: 0.05rem;
-        margin-bottom: 0.05rem;
+        position: absolute;
+        top: 1rem;
+        bottom: 1rem;
+        overflow: auto;
     }
     li{
         text-align: center;

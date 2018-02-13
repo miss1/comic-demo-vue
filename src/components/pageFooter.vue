@@ -18,7 +18,7 @@
         width: 100%;
         height: 1rem;
         text-align: center;
-        position: fixed;
+        position: absolute;
         right: 0;
         left: 0;
         z-index: 1030;

@@ -22,10 +22,13 @@
 </script>
 <style scoped>
     .head {
+        position: absolute;
         width: 7.18rem;
         height: 0.8rem;
         border: 1px solid #7f7f7f;
-        margin: 0.16rem;
+        left: 0.16rem;
+        right: 0.16rem;
+        z-index: 5;
     }
 
     .head span {
@@ -40,5 +43,13 @@
 
     .seclet {
         background: #20a0ff;
+    }
+
+    #content{
+        position: absolute;
+        z-index: 10;
+        top: 1rem;
+        bottom: 1rem;
+        overflow: auto;
     }
 </style>
