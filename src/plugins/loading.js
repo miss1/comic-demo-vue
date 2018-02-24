@@ -1,4 +1,5 @@
 /**
+ * 自己写的vue loading插件
  * Created by yangliling on 2018/2/13.
  */
 var Loading = {};

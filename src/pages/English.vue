@@ -1,7 +1,7 @@
 <template>
     <div class="english">
         <ul>
-            <li v-for="item in data">
+            <li v-for="item in englishList">
                 <span class="span_english">{{ item.english }}</span>
                 <span class="span_chinese">{{ item.chinese }}</span>
             </li>
@@ -10,42 +10,11 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     export default {
-        data(){
-            return{
-                data: []
-            }
-        },
-        created(){
-            //this.getEnglishList();
-        },
-        mounted: function () {
-            this.getEnglishList();
-        },
-        methods:{
-            //调接口获取英语语录列表
-            getEnglishList: function () {
-                var _this = this;
-                let params = {
-                    count: "10",
-                    showapi_appid: "33013",
-                    showapi_test_draft: false,
-                    showapi_sign: "3d1eec5870f24ffc9c0270852e7b69ff"
-                };
-                _this.$loading_show();
-                _this.$http.post("https://route.showapi.com/1211-1", params).then(function (res) {
-                    _this.$loading_hide();
-                    console.log(res);
-                    const response = res.body;
-                    if (response.showapi_res_code == 0) {
-                        _this.data = response.showapi_res_body.data;
-                    } else {
-                        alert("接口请求错误：" + response.showapi_res_error);
-                    }
-                });
-
-            }
-        }
+        computed: mapState([
+            'englishList'
+        ])
     }
 </script>
 

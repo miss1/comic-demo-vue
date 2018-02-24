@@ -4,10 +4,10 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import App from './App'
 import router from './router/index'
+import store from './store/'
 import './config/rem'
 
 import './style/config.css'
-
 import loadingImg from './assets/arror.png'
 import Loading from './plugins/loading'
 
@@ -22,6 +22,7 @@ Vue.http.options.emulateJSON = true;
 new Vue({
     el: '#app',
     router,
+    store,
     components: {App},
     template: '<App/>'
 });

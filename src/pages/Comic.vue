@@ -2,7 +2,7 @@
     <div class="comic">
         <div class="comic_item">
             <ul>
-                <router-link :to="'/comicdetail/'+getParams(item.id)" tag="li" v-for="item in comic_item_list" :key="item.id">
+                <router-link :to="'/comicdetail/'+getParams(item.id)" tag="li" v-for="item in comicItemList" :key="item.id">
                     <img src="../assets/comi_icon.png">
                     <p>{{ item.title }}</p>
                 </router-link>
@@ -12,43 +12,13 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     export default {
         name: 'Comic',
-        data () {
-            return {
-                comic_item_list: []
-            }
-        },
-        created (){
-            this.getComicList();
-        },
-        mounted: function () {
-            //this.getComicList();
-        },
+        computed: mapState([
+            'comicItemList'
+        ]),
         methods: {
-            //调接口获取漫画列表
-            getComicList: function () {
-                var _this = this;
-                let params = {
-                    page: "1",
-                    showapi_appid: "33013",
-                    showapi_test_draft: false,
-                    type: "/category/weimanhua/kbmh",
-                    showapi_sign: "3d1eec5870f24ffc9c0270852e7b69ff"
-                };
-                _this.$loading_show();
-                _this.$http.post("https://route.showapi.com/958-1", params).then(function (res) {
-                    _this.$loading_hide();
-                    const response = res.body;
-                    if (response.showapi_res_code == 0) {
-                        console.log(response.showapi_res_body);
-                        _this.comic_item_list = response.showapi_res_body.pagebean.contentlist;
-                    } else {
-                        alert("接口请求错误：" + response.showapi_res_error);
-                    }
-                });
-                console.log("comic start");
-            },
             //切割漫画列表id（传入/weimanhua/kbmh/138655.html，返回138655.html）
             getParams: function (itemId) {
                 var arr = itemId.split('/');

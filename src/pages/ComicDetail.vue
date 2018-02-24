@@ -18,6 +18,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     export default{
         data() {
             return{
@@ -26,6 +27,9 @@
                 imgList: []
             }
         },
+        computed: mapState([
+            'showapiAppid','showapiSign'
+        ]),
         mounted: function () {
             this.getComicDetail();
         },
@@ -36,9 +40,9 @@
                 var _this = this;
                 let params = {
                     id: "/weimanhua/kbmh/" + _this.$route.params.id,
-                    showapi_appid: "33013",
+                    showapi_appid: _this.showapiAppid,
                     showapi_test_draft: false,
-                    showapi_sign: "3d1eec5870f24ffc9c0270852e7b69ff"
+                    showapi_sign: _this.showapiSign
                 };
                 _this.$loading_show();
                 _this.$http.post("https://route.showapi.com/958-2", params).then(function (res) {
