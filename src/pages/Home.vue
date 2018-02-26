@@ -6,7 +6,7 @@
             <div class="h_change">
                 <div class="h_change_comic" v-show="isComicActive">
                     <span class="comic_back" @click="stepPage(false)">上一页</span>
-                    <input type="number" v-model="page" @keyup.13="jumpPage()">
+                    <input type="number" v-model="page"><label @click="jumpPage()">跳页</label>
                     <span class="comic_next" @click="stepPage(true)">下一页</span>
                 </div>
                 <div class="h_change_eng" v-show="isEnglishActive"><span @click="refreshEnglish()">换一组</span></div>
@@ -47,7 +47,7 @@
 
             //上一页或下一页
             stepPage(next){
-                let page = this.page;
+                let page = this.currentPage;
                 if (next){
                     page ++;
                 }else {
@@ -56,9 +56,9 @@
                         return false;
                     }
                 }
-                this.page = page;
-                this.updateCurrentPage(this.page);
+                this.updateCurrentPage(page);
                 this.getComicList(this);
+                this.page = this.currentPage;
             },
 
             //输入框输入页数跳页
@@ -116,7 +116,7 @@
         margin-right: 0.2rem;
     }
 
-    .h_change_comic span:hover,.h_change_eng span:hover{
+    .h_change_comic span:active,.h_change_eng span:active,.h_change_comic label:active{
         background: #7f7f7f;
     }
 
@@ -128,6 +128,13 @@
         background: #EEEEEE;
         border-radius: 0.1rem;
         text-align: center;
+    }
+
+    .h_change_comic label{
+        font-size: 0.1rem;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        margin-left: 0.1rem;
     }
 
     .h_change_eng span{
